@@ -1,4 +1,6 @@
+import Signature from "@/components/layout/signature";
 import { SITE_URL } from "@/data";
+import { THEME_PREPAINT_SCRIPT } from "@/lib/theme";
 import type { Metadata, Viewport } from "next";
 import { League_Spartan } from "next/font/google";
 import "./globals.css";
@@ -47,7 +49,10 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#3a4663",
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#3a4663" },
+    { media: "(prefers-color-scheme: light)", color: "#e6e6e6" },
+  ],
 };
 
 export default function RootLayout({
@@ -57,7 +62,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${leagueSpartan.variable} antialiased`}>
-      <body>{children}</body>
+      <body className="relative">
+        <script dangerouslySetInnerHTML={{ __html: THEME_PREPAINT_SCRIPT }} />
+        {children}
+        <Signature />
+      </body>
     </html>
   );
 }
