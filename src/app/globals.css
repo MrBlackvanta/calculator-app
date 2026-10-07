@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@source not "../../*.md";
+
+@theme {
+  --font-sans: var(--font-league-spartan), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
