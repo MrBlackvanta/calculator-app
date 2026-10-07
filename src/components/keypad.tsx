@@ -84,6 +84,7 @@ export default function Keypad({
           aria-label={name}
           data-pressed={label === pressedKey ? "" : undefined}
           onClick={() => onPress(action)}
+          onMouseDown={(event) => event.preventDefault()}
           className={`v-key rounded-key md:rounded-key-lg h-16 ${FACE_CLASSES[face]} ${wide ? "col-span-2" : ""}`}
         >
           {label}

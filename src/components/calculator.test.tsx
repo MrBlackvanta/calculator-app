@@ -76,10 +76,20 @@ describe("Calculator", () => {
     expect(readout()).toBe("Error");
   });
 
-  it("leaves Enter to the focused key instead of also computing", async () => {
+  it("computes on Enter after a click rather than repeating the clicked key", async () => {
     const user = userEvent.setup();
     render(<Calculator />);
     await tap(user, "1", "+ add", "2");
+    expect(document.activeElement).toBe(document.body);
+    await user.keyboard("{Enter}");
+    expect(readout()).toBe("3");
+  });
+
+  it("leaves Enter to a key reached by keyboard instead of also computing", async () => {
+    const user = userEvent.setup();
+    render(<Calculator />);
+    await tap(user, "1", "+ add", "2");
+    pad("2").focus();
     await user.keyboard("{Enter}");
     expect(readout()).toBe("22");
   });

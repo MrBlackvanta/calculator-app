@@ -61,12 +61,15 @@
 @layer base {
   :root {
     color-scheme: dark;
+
+    --marker-x: 0rem;
   }
 
   @media (prefers-color-scheme: light) {
     :root:not([data-theme]) {
       color-scheme: light;
 
+      --marker-x: 1.4375rem;
       --color-page: #e6e6e6;
       --color-panel: #d2cdcd;
       --color-screen: #eeeeee;
@@ -94,6 +97,7 @@
   :root[data-theme="2"] {
     color-scheme: light;
 
+    --marker-x: 1.4375rem;
     --color-page: #e6e6e6;
     --color-panel: #d2cdcd;
     --color-screen: #eeeeee;
@@ -120,6 +124,7 @@
   :root[data-theme="3"] {
     color-scheme: dark;
 
+    --marker-x: 2.8125rem;
     --color-page: #17062a;
     --color-panel: #1e0936;
     --color-screen: #1e0936;
@@ -144,7 +149,7 @@
   }
 
   html {
-    @apply font-sans;
+    @apply font-sans font-bold;
   }
 
   body {

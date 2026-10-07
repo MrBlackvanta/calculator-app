@@ -11,10 +11,10 @@ import {
 } from "@/lib/theme";
 import { useEffect, useSyncExternalStore } from "react";
 
-const STOPS: Record<Theme, { label: string; dot: string }> = {
-  "1": { label: "left-0.5", dot: "translate-x-0" },
-  "2": { label: "left-6.25", dot: "translate-x-5.75" },
-  "3": { label: "left-11.75", dot: "translate-x-11.25" },
+const STOPS: Record<Theme, string> = {
+  "1": "left-0.5",
+  "2": "left-6.25",
+  "3": "left-11.75",
 };
 
 export default function ThemeSwitch() {
@@ -38,13 +38,11 @@ export default function ThemeSwitch() {
         aria-labelledby="theme-switch-label"
         className="bg-panel group relative h-6.5 w-17.75 rounded-full"
       >
-        <span
-          className={`bg-marker group-hover:bg-accent-hover absolute bottom-1.25 left-1.25 size-4 rounded-full transition duration-200 motion-reduce:transition-none ${STOPS[theme].dot}`}
-        />
+        <span className="bg-marker group-hover:bg-accent-hover absolute bottom-1.25 left-1.25 size-4 translate-x-(--marker-x) rounded-full transition duration-200 motion-reduce:transition-none" />
         {THEMES.map((value) => (
           <label
             key={value}
-            className={`has-focus-visible:outline-ink absolute -top-4 flex h-10.5 w-5.5 justify-center has-focus-visible:outline-2 has-focus-visible:outline-offset-2 ${STOPS[value].label}`}
+            className={`has-focus-visible:outline-ink absolute -top-4 flex h-10.5 w-5.5 justify-center has-focus-visible:outline-2 has-focus-visible:outline-offset-2 ${STOPS[value]}`}
           >
             <input
               type="radio"

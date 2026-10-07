@@ -1,4 +1,4 @@
-# Calculator app
+# calc
 
 My solution to the [Calculator app](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29) challenge on Frontend Mentor.
 
