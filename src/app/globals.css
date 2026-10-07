@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @source not "../../*.md";
+@source not "../**/*.test.ts";
+@source not "../**/*.test.tsx";
+@source not "../test";
 
 @theme {
   --font-sans: var(--font-league-spartan), ui-sans-serif, system-ui, sans-serif;
