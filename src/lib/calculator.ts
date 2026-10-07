@@ -134,3 +134,20 @@ export function actionForKey(key: string): CalculatorAction | null {
       return null;
   }
 }
+
+export function keyLabelForAction(action: CalculatorAction): string {
+  switch (action.type) {
+    case "digit":
+      return action.digit;
+    case "decimal":
+      return ".";
+    case "operator":
+      return action.operator;
+    case "equals":
+      return "=";
+    case "delete":
+      return "DEL";
+    case "reset":
+      return "RESET";
+  }
+}

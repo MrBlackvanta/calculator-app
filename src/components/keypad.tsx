@@ -70,8 +70,10 @@ const KEYS: KeyDefinition[] = [
 
 export default function Keypad({
   onPress,
+  pressedKey,
 }: {
   onPress: (action: CalculatorAction) => void;
+  pressedKey: string | null;
 }) {
   return (
     <div className="bg-panel rounded-panel grid grid-cols-4 gap-3.25 p-6 md:gap-6 md:p-8">
@@ -80,8 +82,9 @@ export default function Keypad({
           key={label}
           type="button"
           aria-label={name}
+          data-pressed={label === pressedKey ? "" : undefined}
           onClick={() => onPress(action)}
-          className={`rounded-key md:rounded-key-lg h-16 ${FACE_CLASSES[face]} ${wide ? "col-span-2" : ""}`}
+          className={`v-key rounded-key md:rounded-key-lg h-16 ${FACE_CLASSES[face]} ${wide ? "col-span-2" : ""}`}
         >
           {label}
         </button>
