@@ -61,7 +61,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${leagueSpartan.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${leagueSpartan.variable} antialiased`}
+      suppressHydrationWarning
+    >
       <body className="relative">
         <script dangerouslySetInnerHTML={{ __html: THEME_PREPAINT_SCRIPT }} />
         {children}

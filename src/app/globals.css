@@ -4,18 +4,18 @@
 @theme {
   --font-sans: var(--font-league-spartan), ui-sans-serif, system-ui, sans-serif;
 
-  --text-screen: 2.5rem;
-  --text-screen--line-height: 1;
-  --text-screen-lg: 3.5rem;
-  --text-screen-lg--line-height: 1;
-  --text-key: 2rem;
-  --text-key--line-height: 1;
-  --text-key-lg: 2.5rem;
-  --text-key-lg--line-height: 1;
-  --text-action: 1.25rem;
-  --text-action--line-height: 1;
-  --text-action-lg: 1.75rem;
-  --text-action-lg--line-height: 1;
+  --text-readout: 2.5rem;
+  --text-readout--line-height: 1;
+  --text-readout-lg: 3.5rem;
+  --text-readout-lg--line-height: 1;
+  --text-keycap: 2rem;
+  --text-keycap--line-height: 1;
+  --text-keycap-lg: 2.5rem;
+  --text-keycap-lg--line-height: 1;
+  --text-command: 1.25rem;
+  --text-command--line-height: 1;
+  --text-command-lg: 1.75rem;
+  --text-command-lg--line-height: 1;
   --text-brand: 2rem;
   --text-brand--line-height: 1;
   --text-label: 0.75rem;
