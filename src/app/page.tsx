@@ -1,4 +1,4 @@
-import Screen from "@/components/screen";
+import Calculator from "@/components/calculator";
 import ThemeSwitch from "@/components/theme-switch";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
           <h1 className="text-brand -mb-0.75 tracking-tight">calc</h1>
           <ThemeSwitch />
         </header>
-        <Screen value="399981" />
+        <Calculator />
       </div>
     </main>
   );
